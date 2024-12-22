@@ -4,7 +4,7 @@ public class Main {
 
   public static void main (String ... args){
     String phrase = " ";
-    int words = 1;
+    int words = 0;
     Scanner input = new Scanner(System.in);
 
     while (true) {
@@ -24,7 +24,8 @@ public class Main {
         break;
       }
     }
-
+    
+    words++;
     System.out.println("This phrase has " + words + " words!");
   }
 }
