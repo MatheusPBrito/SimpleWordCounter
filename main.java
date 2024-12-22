@@ -5,6 +5,7 @@ public class Main {
   public static void main (String ... args){
     String phrase = " ";
     int words = 0;
+    boolean isEmpty = true;
     Scanner input = new Scanner(System.in);
 
     while (true) {
@@ -16,16 +17,20 @@ public class Main {
       }
       else {
         for (int i = 0; i < phrase.length(); i++){
-            if(i > 0){
-              if(phrase.charAt(i - 1) != ' ' && phrase.charAt(i) == ' ')
+            if(i > 0 && i < phrase.length() - 1){
+              if(phrase.charAt(i - 1) != ' ' && phrase.charAt(i) == ' ' && phrase.charAt(i + 1) != ' '){
                 words++;
+                isEmpty = false;
+              }
             }
         }
         break;
       }
     }
+
+    if(!isEmpty)
+      words++;
     
-    words++;
     System.out.println("This phrase has " + words + " words!");
   }
 }
